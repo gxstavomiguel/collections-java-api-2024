@@ -17,5 +17,12 @@ public class GenericsExempleMap {
             System.out.println("Chave: " + chave + ", Valor: " + valor);
         }
 
+        for (Object obj : mapaSemGenerics.entrySet()){
+            Map.Entry entry = (Map.Entry) obj;
+            String chave = (String) entry.getKey();
+            Object valor = entry.getValue();
+            System.out.println("Chave: " + chave + ", Valor: " + valor);
+        }
+
     }
 }
