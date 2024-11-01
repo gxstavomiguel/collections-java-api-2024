@@ -20,14 +20,17 @@ public class ListaTarefas {
         for(Tarefa t : tarefaList){
             if(t.getDescricao().equalsIgnoreCase(descricao)){
             tarefasParaRemover.add(t);
-
+                                    }
         }
-        }
 
-        tarefaList.removeAll();
+        tarefaList.removeAll(tarefasParaRemover);
     }
-
-
+    public int obterNumeroTotalTarefas(){
+        return tarefaList.size();
+    }
+    public void obterDescricoesTarefas(){
+        System.out.println(tarefaList);
+    }
 
 
 
