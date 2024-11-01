@@ -32,6 +32,12 @@ public class ListaTarefas {
         System.out.println(tarefaList);
     }
 
+    public static void main(String[] args) {
+        ListaTarefas listaTarefas = new ListaTarefas();
+
+        System.out.println("O número total de Elementos na lista é: " + listaTarefas.obterNumeroTotalTarefas());
+    }
+
 
 
 
