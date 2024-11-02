@@ -25,4 +25,17 @@ public class CatalogoLivros {
         }
         return livrosPorAutor;
     }
+
+    public List<Livro> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal){
+        List<Livro> livrosPorIntervaloAnos = new ArrayList<>();
+        if(!livroList.isEmpty()){
+            for(Livro l : livroList){
+                if(l.getAnoPublicacao() >= anoInicial && l.getAnoPublicacao() <= anoFinal){
+                    livrosPorIntervaloAnos.add(l);
+                }
+            }
+        }
+        return livrosPorIntervaloAnos;
+    }
+
 }
