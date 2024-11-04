@@ -1,6 +1,6 @@
 package Ordenacao;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa>{
     //atributos
     private String nome;
 
@@ -12,6 +12,11 @@ public class Pessoa {
         this.nome = nome;
         this.idade = idade;
         this.altura = altura;
+    }
+
+    @Override
+    public int compareTo(Pessoa p) {
+        return 0;
     }
 
     @Override
@@ -34,4 +39,5 @@ public class Pessoa {
     public double getAltura() {
         return altura;
     }
+
 }
