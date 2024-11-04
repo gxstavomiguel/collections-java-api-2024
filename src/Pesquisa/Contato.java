@@ -21,6 +21,10 @@ public class Contato {
         return numero;
     }
 
+    public int setNumero(int numero){
+        this.numero = numero;
+    }
+
     public boolean equals(Object o){
         if (this == o) return true;
         if (!(o instanceof Contato contato)) return false;
