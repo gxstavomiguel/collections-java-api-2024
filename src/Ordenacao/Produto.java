@@ -1,8 +1,9 @@
 package Ordenacao;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
     private long codigo;
 
     private String nome;
@@ -16,6 +17,11 @@ public class Produto {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+    }
+
+    @Override
+    public int compareTo(Produto p) {
+        return nome.compareToIgnoreCase(p.getNome());
     }
 
     public long getCodigo() {
@@ -55,5 +61,12 @@ public class Produto {
                 ", preco=" + preco +
                 ", quantidade=" + quantidade +
                 '}';
+    }
+
+}
+
+class ComparatorPorPreco implements Comparator<Produto> {
+    public int compare(Produto p1, Produto p2){
+        return Double.compare(p1.getPreco(), p2.getPreco());
     }
 }
