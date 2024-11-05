@@ -8,37 +8,35 @@ public class Contato {
 
     private int numero;
 
-    public Contato(String nome, int numero){
+    public Contato(String nome, int numero) {
         this.nome = nome;
         this.numero = numero;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public int getNumero(){
+    public int getNumero() {
         return numero;
     }
 
-    public int setNumero(int numero){
+    public int setNumero(int numero) {
         this.numero = numero;
+        return numero;
     }
 
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Contato contato)) return false;
         return Objects.equals(getNome(), contato.getNome());
     }
 
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(getNome());
     }
 
-    public String toString(){
-        return "Contato{" +
-                "nome='" + nome + '\'' +
-                ", numero=" + numero +
-                '}';
+    public String toString() {
+        return "{" + nome + "," + numero + "}";
     }
 }
