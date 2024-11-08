@@ -1,9 +1,7 @@
 package Ordenacao;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class AgendaEventos {
 
@@ -21,6 +19,21 @@ public class AgendaEventos {
     public void exibirAgenda(){
         Map<LocalDate, Evento> eventosTreeMap = new TreeMap<>(eventosMap);
         System.out.println(eventosTreeMap);
+    }
+
+    public void obterProximoEvento(){
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate proximaData = null;
+        Evento proximoEvento = null;
+        Map<LocalDate, Evento> eventosTreeMap = new TreeMap<>(eventosMap);
+        for(Map.Entry<LocalDate, Evento> entry : eventosMap.entrySet()){
+            if(entry.getKey().isEqual(dataAtual) || entry.getKey().isAfter(dataAtual)){
+                proximaData = entry.getKey();
+                proximoEvento = entry.getValue();
+                System.out.println("O próximo evento: " + proximoEvento + " acontecerá na data " + proximaData);
+                break;
+            }
+        }
     }
 
     public static void main(String[] args) {
